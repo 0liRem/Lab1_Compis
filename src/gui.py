@@ -5,7 +5,6 @@ import os
 import sys
 import tkinter as tk
 from tkinter import filedialog, messagebox
-
 import ttkbootstrap as tb
 from ttkbootstrap.constants import *
 
@@ -39,7 +38,7 @@ class CompiscriptGUI(tb.Window):
         barra.pack(side=TOP, fill=X)
 
         titulo = tb.Label(
-            barra, text="🧪 Compiscript — Analizador Léxico y Sintáctico",
+            barra, text="Compiscript — Analizador Léxico y Sintáctico",
             font=("Segoe UI", 16, "bold")
         )
         titulo.pack(side=LEFT)
@@ -234,7 +233,7 @@ class CompiscriptGUI(tb.Window):
         n = len(self._errores)
         if n == 0:
             self.lbl_resumen.configure(
-                text="✅ Sin errores", bootstyle=SUCCESS
+                text=" Sin errores", bootstyle=SUCCESS
             )
             self.status.configure(
                 text="El archivo fue analizado correctamente. "
@@ -244,7 +243,7 @@ class CompiscriptGUI(tb.Window):
             n_lex = len(resultado.errores_lexicos)
             n_sin = len(resultado.errores_sintacticos)
             self.lbl_resumen.configure(
-                text=f"⚠ {n} error(es) — {n_lex} léxico(s), {n_sin} sintáctico(s)",
+                text=f" {n} error(es) — {n_lex} léxico(s), {n_sin} sintáctico(s)",
             )
             self.status.configure(
                 text=f"Análisis finalizado: se encontraron {n} error(es)."
